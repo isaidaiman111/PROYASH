@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css">
+<style>
+body {
+            background-image: url('BGIMG3.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+ </style>
+<title>Project Proyash</title>
+</head>
+<body>
+    <a href="Proyash.html"><img align="left" src="Logo6.png" alt="Logo Proyash" style="width:150px;height:50px;"></a>
+    <br></br>
+    <h4 style=" text-align:center;color:White; font-family:Raleway Light"><a href="Proyash.html">Home</a>&nbsp; &nbsp; &nbsp; <a href="Proyash.html"> Look For a Doctor </a> &nbsp; &nbsp;&nbsp; <a href="HaP.html">Help a Patient</a> &nbsp; &nbsp; &nbsp;<a href="Proyash.html"> About Us</a></h4>
+    <br></br>
+    <br></br>
+    <h1 style="text-align:center;font-size:300%;"> <t style="color:white;font-family:Lato Black;highlight:white"> Help a Patient</t> </h1>
+    <p style="color:white;font-family:Raleway Light; text-align:center;"><b><i>If you are a doctor this is your chance to <t style=color:#F39C12;>sign up</t> to our website as an authorized doctor<br>or <t style=color:#F39C12;>log in</t> to your existing account.</i></b></p>
+
+    <h4 style="color:#283747; text-align:center; font-family:Raleway Light"><a href="SignUp.html"><button2 class="button button2" style="float: center;">Sign Up</button></a><button2 class="button button2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></a></h4>
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="logo4.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><t style="font-family:Raleway;color:white">Email</t></label>
+                <input type="text" style="font-family: Raleway" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><t style="font-family:Raleway;color:white">Password</t></label>
+                <input type="password" style="font-family: Raleway" placeholder="Enter Password" name="psw" required>
+
+                <button class="button button1" type="submit"><t style="font-family:Raleway;"><b>Login</b></t></button>
+                <label>
+                    <span class="remember"><input type="checkbox" checked="checked" name="remember"><t style="font-family:Raleway;color:White">Remember me</t></span>
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn"><a href="#"><t style="font-family:Raleway;color:black">Cancel</t></a></button>
+                <span class="psw"><a href="#"><t style="font-family:Raleway; color:#F39C12"><b>Forgot password?</b></t></a></span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <div id="id02" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="logo4.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><t style="font-family:Raleway;color:white">Email</t></label>
+                <input type="text" style="font-family: Raleway" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><t style="font-family:Raleway;color:white">Password</t></label>
+                <input type="password" style="font-family: Raleway" placeholder="Enter Password" name="psw" required>
+
+                <button class="button button1" type="submit"><t style="font-family:Raleway;"><b>Login</b></t></button>
+                <label>
+                    <span class="remember"><input type="checkbox" checked="checked" name="remember"><t style="font-family:Raleway;color:White">Remember me</t></span>
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn"><a href="#"><t style="font-family:Raleway;color:black">Cancel</t></a></button>
+                <span class="psw"><a href="#"><t style="font-family:Raleway; color:#F39C12"><b>Forgot password?</b></t></a></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <br>
+    <p style="text-align:center;"><img src="Picture2.png" alt="centered image" style="width:1088px;height:400px;"></p>
+
+
+
+
+</body>
+</html>
