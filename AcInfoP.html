@@ -43,50 +43,67 @@ body {
 <title>Project Proyash</title>
 </head>
 <body>
+    <?php
+    $eid=$_GET['eid'];
+    $conn= mysqli_connect('localhost', 'Tanvir', '', 'proyash');
+    $sql="SELECT EMAIL, FIRST_NAME, LAST_NAME, NID, GENDER, AGE, AREA_LOCATION FROM Patient WHERE ID='$eid'";
+    $get_data = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($get_data);
+    $email = $row['EMAIL'];
+    $fname = $row['FIRST_NAME'];
+    $lname = $row['LAST_NAME'];
+    $nid = $row['NID'];
+    $gender =$row['GENDER'];
+    $age = $row['AGE'];
+    $location= $row['AREA_LOCATION'];
+
+
+
+
+    ?>
     <a href="Proyash.html"><img align="left" src="Logo6.png" alt="Logo Proyash" style="width:150px;height:50px;"></a>
-    <t style="font-family:Raleway; float:right;">
-    <a href="Proyash.html"><button1 class="button button1" style="float: right;">Log Out</button></a></t>
-        <br></br>
-   <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="DrList.html">Doctor List</a> &nbsp; &nbsp;&nbsp; <a href="AppointmentP.html">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="PastVisitsP.html"> Past Visits</a> &nbsp; &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html">Account Info</a></h4>
+
+    <br></br>
+    <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html?eid=<?= $eid; ?>">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html?eid=<?= $eid; ?>">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="AppointmentP.html?eid=<?= $eid; ?>">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html?eid=<?= $eid; ?>">Account Info</a>&nbsp; &nbsp; &nbsp;  <a href="Proyash.html">Log Out</a></h4>
     <br></br>
     <br></br>
- <p> <h3 style=" text-align:center; font-family:Raleway Light;">Patient's Past Visits</h3> 
- <table style="width:80%">
-  <tr>
-    <th>Patient's Name:</th>
-	
-    
-    
-  </tr>
-  <tr>
-   
-	<th>Gender:</th>
-    
-    
-    </tr>
-  <tr>
-   
-    <th>Age</th>
-	
-    
-    </tr>
-	<tr>
-    
-	<th>Location:</th>
-    
-    
-    </tr>
-	<tr>
-    
-    <th>Email:</th>
-    
-    
-    </tr>
-	<tr>
-   
-    <th>NID:</th>
-    
-    </tr>
-	
-    
-   
+    <p>
+        <h3 style=" text-align:center; font-family:Raleway Light;">Patient's Past Visits</h3>
+        <table style="width:80%">
+            <tr>
+                <th>Patient's Name: <?= $fname ?> <?= $lname ?></th>
+
+
+
+            </tr>
+            <tr>
+
+                <th>Gender: <?= $gender ?></th>
+
+
+            </tr>
+            <tr>
+
+                <th>Age: <?= $age ?></th>
+
+
+            </tr>
+            <tr>
+
+                <th>Location: <?= $location ?></th>
+
+
+            </tr>
+            <tr>
+
+                <th>Email: <?= $email ?></th>
+
+
+            </tr>
+            <tr>
+
+                <th>NID: <?= $nid ?></th>
+
+            </tr>
+
+

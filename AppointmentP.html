@@ -33,39 +33,42 @@ body {
 <title>Project Proyash</title>
 </head>
 <body>
+    <?php
+    $eid=$_GET['eid'];
+    $conn= mysqli_connect('localhost', 'Tanvir', '', 'proyash');?>
     <a href="Proyash.html"><img align="left" src="Logo6.png" alt="Logo Proyash" style="width:150px;height:50px;"></a>
-    <t style="font-family:Raleway; float:right;">
-    <a href="Proyash.html"><button1 class="button button1" style="float: right;">Log Out</button></a></t>
-        <br></br>
-         <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="DrList.html">Doctor List</a> &nbsp; &nbsp;&nbsp; <a href="AppointmentP.html">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="PastVisitsP.html"> Past Visits</a> &nbsp; &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html">Account Info</a></h4>
+
+    <br></br>
+    <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html?eid=<?= $eid; ?>">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html?eid=<?= $eid; ?>">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="AppointmentP.html?eid=<?= $eid; ?>">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html?eid=<?= $eid; ?>">Account Info</a>&nbsp; &nbsp; &nbsp;  <a href="Proyash.html">Log Out</a></h4>
     <br></br>
     <br></br>
- <p> <h3 style=" text-align:center; font-family:Raleway Light;">Patient's Appointment</h3> 
- <table style="width:80%">
-  <tr>
-    <th>Doctor's Name</th>
-    <th>Doctor's Specialization</th>
-    <th>Date</th>
-    <th>Time</th>
-    
-    
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
- 
- 
- 
- 
- </p>
+    <p>
+        <h3 style=" text-align:center; font-family:Raleway Light;">Patient's Appointment</h3>
+        <table style="width:80%">
+            <tr>
+                <th>Doctor's Name</th>
+                <th>Doctor's Specialization</th>
+                <th>Date</th>
+                <th>Time</th>
+
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+
+
+
+    </p>
 
 
 

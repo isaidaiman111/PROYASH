@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="main.css">
+    <style>
+        a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #F39C12;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        body {
+            background-image: url('BGIMG3.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+    <title>Sign Up Page</title>
+
+</head>
+<body>
+    <a href="Proyash.html"><img align="left" src="Logo6.png" width="888" height="301" alt="Logo Proyash" style="width:150px;height:50px;"></a>
+        <br></br>
+        <h4 style=" text-align:center; font-family:Raleway Light">
+    <a href="Proyash.html">Home</a>&nbsp; &nbsp; &nbsp; 
+    <a href="LFD.html"> Look For a Doctor </a> &nbsp; &nbsp;&nbsp; 
+    <a href="HaP.html">Help a Patient</a> &nbsp; &nbsp; &nbsp;
+    <a href="about.html"> About Us</a></h4>
+        <br></br>
+        <h1 style="text-align:center;font-size:300%;"><t style="color:white;font-family:Lato Black;highlight:white"> Sign Up<t style="color:#F39C12;"> Here!</t> </h1>
+        <div class="row" style="font-family:Raleway;color:white">
+            <div class="col-3">
+                <div class="container">
+                    <form action="Patientsu.php" method="post">
+
+                        <div class="row" style="font-family:Raleway;">
+                            <div class="col-2">
+                                <h3>Basic Information</h3>
+                                <label for="email">Email</label>
+                                <input type="text" id="email" name="email" placeholder="abcd@example.com" required>
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="fname" placeholder="Enter first name here" required>
+                                <label for="lname"> Last Name</label>
+                                <input type="text" id="lname" name="lname" placeholder="Enter last name here" required>
+                                <label for="psw">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Enter your password here" required>
+                                <label for="NID">NID</label>
+                                <input type="text" id="NID" name="NID" placeholder="Enter your NID" req />
+                                <label for="Gender">Gender</label>
+                                <input type="text" id="gender" name="gender" placeholder="Enter your Gender" required>
+                                <label for="blood">Blood Group</label>
+                                <input type="text" id= "blood" name="blood" placeholder="Enter your blood group" required>
+                                <label for="location">Area Location</label>
+                                <input type="text" id="Location" name="Location" placeholder="Enter your location here" required>
+                                <label for="age">Age</label>
+                                <input type="text" id="age" name="age" placeholder="Your Expertise(eg. Dentist)" required>
+
+
+                            </div>
+
+                            <div class="col-2">
+                                <h3>Payment Info</h3>
+                          
+                                <label for="Acc_Num">Account Number</label>
+                                <input type="text" id="Acc_Num" name="Acc_Num" placeholder="Enter your account number">
+                                <label for="Bank_Name">Bank Name</label>
+                                <input type="text" id="Bank_Name" name="Bank_Name" placeholder="Enter the name of the bank">
+                                <label for="Bank_Branch">Bank Branch</label>
+                                <input type="text" id="Bank_Branch" name="Bank_Branch" placeholder="Name of the Branch">
+                                <label for="bKash">bKash</label>
+                                <input type="text" id="bkash" name="bkash" placeholder="Enter the 11 digits of your Bkash Number">
+
+                            </div>
+
+                        </div>
+                        <label>
+                            **Please make sure that you put authentic information
+                        </label>
+                        <input type="submit" value="Sign Up!" class=" button button2">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+</html>

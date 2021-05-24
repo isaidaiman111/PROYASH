@@ -29,15 +29,24 @@ body {
 <title>Project Proyash</title>
 </head>
 <body>
+    <?php
+    $eid=$_GET['eid'];
+    $conn= mysqli_connect('localhost', 'Tanvir', '', 'proyash');
+    $sql="Select FIRST_NAME From patient where ID='$eid'";
+    $get_data = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($get_data);
+    $first_name = $row['FIRST_NAME'];
+    //echo $first_name;
+
+    ?>
     <a href="Proyash.html"><img align="left" src="Logo6.png" alt="Logo Proyash" style="width:150px;height:50px;"></a>
-    <t style="font-family:Raleway; float:right;">
-    <a href="Proyash.html"><button1 class="button button1" style="float: right;">Log Out</button></a></t>
-        <br></br>
-        <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="DrList.html">Doctor List</a> &nbsp; &nbsp;&nbsp; <a href="AppointmentP.html">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="PastVisitsP.html"> Past Visits</a> &nbsp; &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html">Account Info</a></h4>
+
+    <br></br>
+    <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html?eid=<?= $eid; ?>">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html?eid=<?= $eid; ?>">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="AppointmentP.html?eid=<?= $eid; ?>">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html?eid=<?= $eid; ?>">Account Info</a>&nbsp; &nbsp; &nbsp;  <a href="Proyash.html">Log Out</a></h4>
     <br></br>
     <br></br>
-    <h1 style="text-align:center;font-size:300%;"> <t style="color:#283747;font-family:Lato Black;highlight:white"> Hi...</t> </h1>
-    <p style="color:#283747;font-family:Raleway Light; text-align:center;"><b><i>To find a doctor near your location, check<t style="color:#F39C12;"> Doctor List</t><br></br> To take an appointment for your doctor, use <t style="color:#F39C12;">Take Appointments</t><br></br>  To access your account information, use  <t style="color:#F39C12;">Account Info</t> </i></b></p>
+    <h1 style="text-align:center;font-size:300%;"> <t style="color:#283747;font-family:Lato Black;highlight:white"> Hi <?= $first_name ?>!</t> </h1>
+    <p style="color:#283747;font-family:Raleway Light; text-align:center;"><b><i>To find a doctor near your location, check<t style="color:#F39C12;"> Doctor List</t><br></br> To take an appointment for your doctor, use <t style="color:#F39C12;">Take Appointments</t><br></br>To access your account information, use  <t style="color:#F39C12;">Account Info</t> </i></b></p>
 
     <h4 style="color:#283747; text-align:center; font-family:Raleway Light"><a href="Proyash.html"><button2 class="button button2" style="float: center;">Appointments</button></a></h4>
     <br>

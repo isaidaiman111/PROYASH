@@ -19,56 +19,111 @@ a:hover {
   background-color: transparent;
   text-decoration: none;
 }
-tr:nth-child(even) {background-color: #f2f2f2;}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
+    table, th, td {
+        border: 3px solid black;
+        border-collapse: collapse;
+        padding: 30px 30px 30px 30px;
+        font-family: Raleway;
+    }
 body {
             background-image: url('LFD.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
-		table {
-  border-collapse: collapse;
-}
+		
  </style>
 <title>Project Proyash</title>
 </head>
 <body>
     <a href="Proyash.html"><img align="left" src="Logo6.png" alt="Logo Proyash" style="width:150px;height:50px;"></a>
-    <t style="font-family:Raleway; float:right;">
-    <a href="Proyash.html"><button1 class="button button1" style="float: right;">Log Out</button></a></t>
-        <br></br>
-        <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="DrList.html">Doctor List</a> &nbsp; &nbsp;&nbsp; <a href="AppointmentP.html">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="PastVisitsP.html"> Past Visits</a> &nbsp; &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html">Account Info</a></h4>
+
+    <br></br>
+    <h4 style=" text-align:center; font-family:Raleway Light;"><a href="LFDHomeL.html?eid=<?= $eid; ?>">Home</a>&nbsp; &nbsp; &nbsp; <a href="LfaDr.html?eid=<?= $eid; ?>">Look for a doctor</a>&nbsp; &nbsp; &nbsp;<a href="AppointmentP.html?eid=<?= $eid; ?>">Appointments</a> &nbsp; &nbsp; &nbsp;<a href="AcInfoP.html?eid=<?= $eid; ?>">Account Info</a>&nbsp; &nbsp; &nbsp;  <a href="Proyash.html">Log Out</a></h4>
     <br></br>
     <br></br>
- <p> <h3 style=" text-align:center; font-family:Raleway Light;">Patient's Appointment</h3> 
- <table style="width:100%">
-  <tr>
-    <th>Doctor's Name</th>
-    <th>Doctor's Specialization</th>
-   <th>Doctor's Location</th>
-    
-    
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
- 
- 
- 
- 
- </p>
+
+    <h3 style=" text-align:center; font-family:Raleway Light;">Doctor List</h3>
+    <table class="center">
+        <tr>
+            <th><h3 style="color:crimson">Doctor ID</h3></th>
+            <th><h3 style="color:crimson">First Name</h3></th>
+            <th><h3 style="color:crimson">Last Name</h3></th>
+            <th><h3 style="color:black">Specialisation</h3></th>
+            <th><h3 style="color:black">Area Location</h3></th>
+            <th><h3 style="color:black">Visiting Fee</h3></th>
+            <th><h3 style="color:black">Chamber Address</h3></th>
+            <th><h3 style="color:black">Phone</h3></th>
+
+        </tr>
+        <?php
+        $eid=$_GET['eid'];
+        $conn= mysqli_connect('localhost', 'Tanvir', '', 'proyash');
+        $sql = "Select ID, FIRST_NAME, LAST_NAME, SPECIALISATION, AREA_LOCATION, VISITING_FEE, CHAMBER_ADDRESS, Phone From doctor d Where d.ID='$eid'";
+        $get_data = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($get_data)>0)
+        {
+        while($row = mysqli_fetch_assoc($get_data))
+        {
+        echo '
+        <tr>
+            <td><h4>'.$row['ID'].'</h4></td>
+            <td><h4>'.$row['FIRST_NAME'].'</h4></td>
+            <td><h4>'.$row['LAST_NAME'].'</h4></td>
+            <td><h4>'.$row['SPECIALISATION'].'</h4></td>
+            <td><h4>'.$row['AREA_LOCATION'].'</h4></td>
+            <td><h4>'.$row['VISITING_FEE'].'</h4></td>
+            <td><h4>'.$row['CHAMBER_ADDRESS'].'</h4></td>
+            <td><h4>'.$row['Phone'].'</h4></td>';
+
+            echo '
+        </tr>';
+        }
+        }
+
+        ?>
+
+    </table>
+    <h4 style="color:#283747; text-align:center; font-family:Raleway Light"><a href="#"><button2 class="button button2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Make an Appointment</button></a></h4>
+
+    <br></br>
+    <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="PatientValidation.php" method="post">
+
+            <div class="container">
+                <label for="email"><t style="font-family:Raleway;color:white">Email</t></label>
+                <input type="text" style="font-family: Raleway" placeholder="Enter Email" name="uname" required>
+                <label for="id"><t style="font-family:Raleway;color:white">Doctor ID</t></label>
+                <input type="text" style="font-family: Raleway" placeholder="Enter Doctor ID" name="id" required>
+                <label for="day">Choose a day:</label>
+                <select name="day" id="day">
+                    <option value="sun">Sunday</option>
+                    <option value="mon">Monday</option>
+                    <option value="tue">Tuesday</option>
+                    <option value="wed">Wednesday</option>
+                    <option value="thur">Thursday</option>
+                    <option value="sat">Saturday</option>
+                </select>
+                <label for="slot">Choose a slot:</label>
+                <select name="slot" id="slot">
+                    <option value="one">6 PM to 7 PM</option>
+                    <option value="two">7 PM to 8 PM</option>
+                    <option value="three">8 PM to 9 PM</option>
+                    <option value="four">9 PM to 10 PM</option>
+
+                </select>
+
+                <button class="button button1" type="submit"><t style="font-family:Raleway;"><b>Enter</b></t></button>
+
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn"><a href="#"><t style="font-family:Raleway;color:black">Cancel</t></a></button>
+
+            </div>
+        </form>
+    </div>
 
 
 
