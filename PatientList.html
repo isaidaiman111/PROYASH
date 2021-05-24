@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        a:link {
+            color: #283747;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #283747;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #F39C12;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        body {
+            background-image: url('BGIMG5.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+    <title>Patient List</title>
+</head>
+<body>
+    <table>
+        <?php
+
+        $conn= mysqli_connect('localhost', 'Tanvir', '', 'proyash');
+        $sql = "Select * From Doctor";
+        $get_data = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($get_data)>0)
+        {
+        while($row = mysqli_fetch_assoc($get_data))
+        {
+        echo '
+        <tr>
+            <td>'.$row['FIRST_NAME'].'</td>
+            <td>'.$row['LAST_NAME'].'</td>
+            <td>'.$row['Phone'].'</td>';
+            echo '
+        </tr>';
+        }
+        }
+
+        ?>
+
+    </table>
+</body>
+</html>

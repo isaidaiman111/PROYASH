@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="main.css">
 <style>
 body {
-            background-image: url('BGIMG3.jpg');
+            background-image: url('BGIMG.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
@@ -15,7 +15,11 @@ body {
 <body>
     <a href="Proyash.html"><img align="left" src="Logo6.png" alt="Logo Proyash" style="width:150px;height:50px;"></a>
     <br></br>
-    <h4 style=" text-align:center;color:White; font-family:Raleway Light"><a href="Proyash.html">Home</a>&nbsp; &nbsp; &nbsp; <a href="Proyash.html"> Look For a Doctor </a> &nbsp; &nbsp;&nbsp; <a href="HaP.html">Help a Patient</a> &nbsp; &nbsp; &nbsp;<a href="Proyash.html"> About Us</a></h4>
+    <h4 style=" text-align:center;color:White; font-family:Raleway Light">
+    <a href="Proyash.html">Home</a>&nbsp; &nbsp; &nbsp; 
+    <a href="LFD.html"> Look For a Doctor </a> &nbsp; &nbsp;&nbsp; 
+    <a href="HaP.html">Help a Patient</a> &nbsp; &nbsp; &nbsp;
+    <a href="about.html"> About Us</a></h4>
     <br></br>
     <br></br>
     <h1 style="text-align:center;font-size:300%;"> <t style="color:white;font-family:Lato Black;highlight:white"> Help a Patient</t> </h1>
@@ -24,7 +28,7 @@ body {
     <h4 style="color:#283747; text-align:center; font-family:Raleway Light"><a href="SignUp.html"><button2 class="button button2" style="float: center;">Sign Up</button></a><button2 class="button button2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></a></h4>
     <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate" action="validation.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <img src="logo4.png" alt="Avatar" class="avatar">
@@ -32,7 +36,7 @@ body {
 
             <div class="container">
                 <label for="uname"><t style="font-family:Raleway;color:white">Email</t></label>
-                <input type="text" style="font-family: Raleway" placeholder="Enter Username" name="uname" required>
+                <input type="text" style="font-family: Raleway" placeholder="Enter Email" name="uname" required>
 
                 <label for="psw"><t style="font-family:Raleway;color:white">Password</t></label>
                 <input type="password" style="font-family: Raleway" placeholder="Enter Password" name="psw" required>
@@ -51,10 +55,10 @@ body {
     </div>
 
     <script>
-        // Get the modal
+        =
         var modal = document.getElementById('id01');
 
-        // When the user clicks anywhere outside of the modal, close it
+        
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
